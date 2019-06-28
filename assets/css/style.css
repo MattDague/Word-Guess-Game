@@ -1,0 +1,20 @@
+body {
+    background-image: url("../images/bg.jpg");
+   }
+
+#logo {
+    display: inline-block;
+}
+
+#game {
+    font-family: 'Carrois Gothic SC', sans-serif;
+    background-color: black;
+    height: 600px;
+    padding: 50px;
+    text-align: center;
+    font-size: 26px;
+    color: white;
+    border-color:#39A11E;
+    border: solid;
+    border-width: 10px;
+}
