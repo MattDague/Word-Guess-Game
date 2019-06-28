@@ -35,6 +35,12 @@ else {
 
 
 
+// use for loop and index of to replace dashes with individual letters,  if guess doesnt match put in loss column
+// you can use indexof() to replace letters!
+// you can set variables equal to functions
+
+// you can fix the start by putting it in a function and calling it, function name(){}; name()
+// maybe restart button calls that function again?
 }
 console.log(blanks);
 
