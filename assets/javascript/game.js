@@ -1,6 +1,6 @@
 var userGuess
 var characters = ["audreyhorne", "benjaminhorne", "bob", "bobbybriggs", "dalecooper", "evilcoop", "thefireman", "gordoncole", "laurapalmer", "lelandpalmer", "loglady", "shellyjohnson"]
-var remainingGuesses = 12
+var remainingGuesses = 10
 var wrongLetters = []
 var blanks = []
 var wins = 0
@@ -32,17 +32,21 @@ console.log(userGuess);
 //checks if users guess conforms to actual answer
 if (actual.indexOf(userGuess) > -1) {
     console.log(true);
-}
-//if answer is wrong subtract from remaining guesses
-else if (wrongLetters.includes(userGuess) == true) {
-     --remainingGuesses;
-    document.getElementById("remaining").innerHTML = remainingGuesses;
-}
-   
 
+
+
+}
+
+//if answer is wrong subtract from remaining guesses
+// else if (wrongLetters.includes(userGuess) == true) {
+//     document.getElementById("remaining").innerHTML = remainingGuesses;
+// }
+   
+//if guess is wrong and is not listed in wrong letters, put it in wrong letters and update remaining guesses
 else if (wrongLetters.includes(userGuess) == false) {
     wrongLetters.push(userGuess);
-    document.getElementById("guessed").innerHTML = wrongLetters;
+    --remainingGuesses;
+    document.getElementById("guessed").innerHTML = wrongLetters.join(" ");
     document.getElementById("remaining").innerHTML = remainingGuesses;
 } 
     
