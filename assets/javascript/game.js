@@ -13,54 +13,64 @@ var actual = characters[Math.floor(Math.random() * characters.length)];
 console.log(actual);
 
 function gameStart() {
-// places - marks based on amount of letters in characters name
+    // places - marks based on amount of letters in characters name
 
- for ( i=0; i < actual.length; i++) {
- blanks.push('-'); 
-};
- 
-console.log(blanks);
+    for (i = 0; i < actual.length; i++) {
+        blanks.push('-');
+    };
 
-;
-// checks user input
-document.onkeyup = function(event) {
-var userGuess = event.key;
-document.getElementById("current").innerHTML = blanks.join("");
-console.log(userGuess);
+    console.log(blanks);
 
-
-//checks if users guess conforms to actual answer
-if (actual.indexOf(userGuess) > -1) {
-    console.log(true);
+    ;
+    // checks user input
+    document.onkeyup = function (event) {
+        var userGuess = event.key;
+        document.getElementById("current").innerHTML = blanks.join("");
+        console.log(userGuess);
 
 
+        //checks if users guess conforms to actual answer
+        if (actual.indexOf(userGuess) > -1) {
 
+            // replaces blanks with letters
+
+            for (var h = 0; h < actual.length; h++) {
+                if (userGuess === actual[h]) {
+                    blanks[h] = userGuess;
+                    document.getElementById("current").innerHTML = blanks.join("");
+                    console.log(true);
+                    
+                
+
+
+                };
+            };
+        }
+
+        //if answer is wrong subtract from remaining guesses
+        // else if (wrongLetters.includes(userGuess) == true) {
+        //     document.getElementById("remaining").innerHTML = remainingGuesses;
+        // }
+
+        //if guess is wrong and is not listed in wrong letters, put it in wrong letters and update remaining guesses
+        else if (wrongLetters.includes(userGuess) == false) {
+            wrongLetters.push(userGuess);
+            --remainingGuesses;
+            document.getElementById("guessed").innerHTML = wrongLetters.join(" ");
+            document.getElementById("remaining").innerHTML = remainingGuesses;
+        }
+
+
+
+
+        //game restart
+        // if ((remainingGuesses == 0) || (actual.length == )  {
+        //     gameStart();
+        //     remainingGuesses = 0;
+
+        // };
+    };
 }
-
-//if answer is wrong subtract from remaining guesses
-// else if (wrongLetters.includes(userGuess) == true) {
-//     document.getElementById("remaining").innerHTML = remainingGuesses;
-// }
-   
-//if guess is wrong and is not listed in wrong letters, put it in wrong letters and update remaining guesses
-else if (wrongLetters.includes(userGuess) == false) {
-    wrongLetters.push(userGuess);
-    --remainingGuesses;
-    document.getElementById("guessed").innerHTML = wrongLetters.join(" ");
-    document.getElementById("remaining").innerHTML = remainingGuesses;
-} 
-    
-}
-
-
-//game restart
-// if ((remainingGuesses == 0) || (actual.length == )  {
-//     gameStart();
-//     remainingGuesses = 0;
-
-// };
-};
-
 
 // use for loop and index of to replace dashes with individual letters,  if guess doesnt match put in loss column
 // you can use indexof() to replace letters!
@@ -79,7 +89,7 @@ gameStart();
 // console.log(actual.length);
 
 // //     return {blanks
-        
+
 
 // var audrey = ["a", "u", "d", "r", "e", "y"]
 
