@@ -38,13 +38,34 @@ function gameStart() {
                 if (userGuess === actual[h]) {
                     blanks[h] = userGuess;
                     document.getElementById("current").innerHTML = blanks.join("");
-                    console.log(true);
+                    
+                    if (blanks.includes("-") == false) {
+                        wins++;
+                        document.getElementById("wins").innerHTML = wins;
+                        
+                    }
+
+                    //WIP LOSE CONDITION
+                //     else if ((blanks.includes("-") == true) && (remaningGuesses === 0))
+                //     wins--;
+                //     document.getElementById("wins").innerHTML = wins;
+                // }    
+                }
+                
                     
                 
 
 
-                };
-            };
+                }
+        
+
+            else if (wrongLetters.includes(userGuess) == false) {
+                wrongLetters.push(userGuess);
+                --remainingGuesses;
+                document.getElementById("guessed").innerHTML = wrongLetters.join(" ");
+                document.getElementById("remaining").innerHTML = remainingGuesses;
+            }
+            }
         }
 
         //if answer is wrong subtract from remaining guesses
@@ -53,12 +74,7 @@ function gameStart() {
         // }
 
         //if guess is wrong and is not listed in wrong letters, put it in wrong letters and update remaining guesses
-        else if (wrongLetters.includes(userGuess) == false) {
-            wrongLetters.push(userGuess);
-            --remainingGuesses;
-            document.getElementById("guessed").innerHTML = wrongLetters.join(" ");
-            document.getElementById("remaining").innerHTML = remainingGuesses;
-        }
+       
 
 
 
@@ -68,9 +84,6 @@ function gameStart() {
         //     gameStart();
         //     remainingGuesses = 0;
 
-        // };
-    };
-}
 
 // use for loop and index of to replace dashes with individual letters,  if guess doesnt match put in loss column
 // you can use indexof() to replace letters!
