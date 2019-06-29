@@ -1,22 +1,27 @@
 var userGuess
-var characters = ["AudreyHorne", "BenjaminHorne", "Bob", "BobbyBriggs", "DaleCooper", "EvilCoop", "TheFireman", "GordonCole", "LauraPalmer", "LelandPalmer", "LogLady", "ShellyJohnson"]
-var audrey = ["a", "u", "d", "r", "e", "y"]
+var characters = ["audreyhorne", "benjaminhorne", "bob", "bobbybriggs", "dalecooper", "evilcoop", "thefireman", "gordoncole", "laurapalmer", "lelandpalmer", "loglady", "shellyjohnson"]
+var remainingGuesses = 12
+var wrongLetters = []
 var blanks = []
-
+var wins = 0
+console.log(remainingGuesses)
 
 // determines random character
+
 var actual = characters[Math.floor(Math.random() * characters.length)];
 
 console.log(actual);
 
-
+function gameStart() {
 // places - marks based on amount of letters in characters name
-for ( i=0; i < actual.length; i++) {
-    blanks.push('-'); 
-      
+
+ for ( i=0; i < actual.length; i++) {
+ blanks.push('-'); 
 };
+ 
+console.log(blanks);
 
-
+;
 // checks user input
 document.onkeyup = function(event) {
 var userGuess = event.key;
@@ -25,14 +30,32 @@ console.log(userGuess);
 
 
 //checks if users guess conforms to actual answer
-if (actual.indexOf(userGuess) > -1) {;
+if (actual.indexOf(userGuess) > -1) {
     console.log(true);
 }
+//if answer is wrong subtract from remaining guesses
+else if (wrongLetters.includes(userGuess) == true) {
+     --remainingGuesses;
+    document.getElementById("remaining").innerHTML = remainingGuesses;
+}
+   
 
-else {
-    console.log(false)
+else if (wrongLetters.includes(userGuess) == false) {
+    wrongLetters.push(userGuess);
+    document.getElementById("guessed").innerHTML = wrongLetters;
+    document.getElementById("remaining").innerHTML = remainingGuesses;
+} 
+    
 }
 
+
+//game restart
+// if ((remainingGuesses == 0) || (actual.length == )  {
+//     gameStart();
+//     remainingGuesses = 0;
+
+// };
+};
 
 
 // use for loop and index of to replace dashes with individual letters,  if guess doesnt match put in loss column
@@ -40,16 +63,21 @@ else {
 // you can set variables equal to functions
 
 // you can fix the start by putting it in a function and calling it, function name(){}; name()
+
 // maybe restart button calls that function again?
-}
-console.log(blanks);
+
+
+
+
+
+gameStart();
 
 // console.log(actual.length);
 
 // //     return {blanks
         
 
-
+// var audrey = ["a", "u", "d", "r", "e", "y"]
 
 
 

@@ -18,3 +18,8 @@ body {
     border: solid;
     border-width: 10px;
 }
+
+
+.hide {
+    display: none;
+}
