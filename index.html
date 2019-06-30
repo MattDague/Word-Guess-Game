@@ -13,8 +13,6 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <title>Twin Peaks Game</title>
 
-
-    
 </head>
 
 <body>
@@ -30,38 +28,33 @@
 
             <div class="col-8 container" id="game">
 
-               <p id="instructions">Press any key to get started!<p>
-                   
-                   <p>Wins</p>
-                <div id="wins">0</div>
-                <br>
-                <p>Current Word</p>
-                <div id="current"></div>
-                <br>
-                <p>Number of Guesses remaining</p>
-                <div id="remaining">10</div>
-                <br>
-                <p>Letters already guessed</p>  
-                 <div id="guessed"></div>
-                <br>
-                <br>
-                <br>
-                 <button type="button" class="btn btn-light" id="restartbutton" onclick="endGame();">RESTART</button>
+                <p id="instructions">Press any letter to get started!<p>
+
+                        <p>Wins</p>
+                        <div id="wins">0</div>
+                        <br>
+                        <p>Current Word</p>
+                        <div id="current"></div>
+                        <br>
+                        <p>Number of Guesses remaining</p>
+                        <div id="remaining">10</div>
+                        <br>
+                        <p>Letters already guessed</p>
+                        <div id="guessed"></div>
+
+                        <br>
+                        <div class="row">
+                            <div class="col-5"></div>
+                            <div class="col-2"> <button type="button" class="btn btn-light" id="restartbutton"
+                                    onclick="endGame();">RESTART</button> </div>
+                            <div class="col-5"></div>
+                        </div>
+                        <br>
 
 
-                
-
-            
-            
-            
             </div>
-
-
-
-
-
-
-            <div class="col-4 text-center" id="pictures" >
+            <!--hidden pictures to display if user is correct-->
+            <div class="col-4 text-center" id="pictures">
                 <img class="img-responsive hide" src="assets/images/audrey.jpg" id="audrey" alt="pictureofaudrey" />
                 <img class="img-responsive hide" src="assets/images/ben.jpg" id="ben" alt="pictureofben">
                 <img class="img-responsive hide" src="assets/images/bob.jpg" id="bob" alt="pictureofbob">
@@ -75,26 +68,15 @@
                 <img class="img-responsive hide" src="assets/images/loglady.jpg" id="loglady" alt="pictureofloglady">
                 <img class="img-responsive hide" src="assets/images/shelly.jpg" id="shelly" alt="pictureofshelly">
                 <iframe src="assets/falling.mp3" allow="autoplay" id="audio" class="hide"></iframe>
-               
 
             </div>
 
             <iframe src="assets/falling.mp3" allow="autoplay" id="audio" class="hide"></iframe>
-            
+
         </div>
 
-
     </div>
-
-
-
-
-
-
-
 
 </body>
 
 </html>
-
-<!-- tests -->
