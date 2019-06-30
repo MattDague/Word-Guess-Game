@@ -26,6 +26,11 @@ function gameStart() {
 
     console.log(blanks);
 
+    // document.onload = function () {
+    //     document.getElementById("current").innerHTML = blanks.join("");
+
+    // }
+
     // checks user input
     document.onkeyup = function (event) {
         var userGuess = event.key;
@@ -172,18 +177,11 @@ function endGame() {
     document.getElementById("loglady").style.display = "none";
     document.getElementById("shelly").style.display = "none";
 
-    // initial();
+   
     gameStart();
 
 
 };
-
-
-// function restart() {
-//     endGame()
-
-
-// };
 
 
 
