@@ -4,12 +4,13 @@ body {
 
 #logo {
     display: inline-block;
+    height: 200px;
 }
 
 #game {
     font-family: 'Carrois Gothic SC', sans-serif;
     background-color: black;
-    height: 600px;
+    height: 830px;
     padding: 50px;
     text-align: center;
     font-size: 26px;
@@ -22,4 +23,16 @@ body {
 
 .hide {
     display: none;
+    margin: 50px;
+    border: solid;
+    border-width: 10px;
+    border-color: white;
 }
+
+
+
+.btn {
+    display: none;
+}
+
+/* test */

@@ -30,7 +30,7 @@
 
             <div class="col-8 container" id="game">
 
-               <p>Press any key to get started!<p>
+               <p id="instructions">Press any key to get started!<p>
                    
                    <p>Wins</p>
                 <div id="wins">0</div>
@@ -39,10 +39,14 @@
                 <div id="current"></div>
                 <br>
                 <p>Number of Guesses remaining</p>
-                <div id="remaining">12</div>
+                <div id="remaining">10</div>
                 <br>
                 <p>Letters already guessed</p>  
                  <div id="guessed"></div>
+                <br>
+                <br>
+                <br>
+                 <button type="button" class="btn btn-light" id="restartbutton" onclick="endGame();">RESTART</button>
 
 
                 
@@ -58,16 +62,25 @@
 
 
             <div class="col-4 text-center" id="pictures" >
-                <img class="img-responsive hide" src="assets/images/audrey.jpg">
+                <img class="img-responsive hide" src="assets/images/audrey.jpg" id="audrey" alt="pictureofaudrey" />
+                <img class="img-responsive hide" src="assets/images/ben.jpg" id="ben" alt="pictureofben">
+                <img class="img-responsive hide" src="assets/images/bob.jpg" id="bob" alt="pictureofbob">
+                <img class="img-responsive hide" src="assets/images/bobby.jpg" id="bobby" alt="pictureofbobby">
+                <img class="img-responsive hide" src="assets/images/coop.jpg" id="coop" alt="pictureofcoop">
+                <img class="img-responsive hide" src="assets/images/evilcoop.jpg" id="evilcoop" alt="pictureofevilcoop">
+                <img class="img-responsive hide" src="assets/images/fireman.jpg" id="fireman" alt="pictureoffireman">
+                <img class="img-responsive hide" src="assets/images/gordon.jpg" id="gordon" alt="pictureofgordon">
+                <img class="img-responsive hide" src="assets/images/laura.jpg" id="laura" alt="pictureoflaura">
+                <img class="img-responsive hide" src="assets/images/leland.jpg" id="leland" alt="pictureofleland">
+                <img class="img-responsive hide" src="assets/images/loglady.jpg" id="loglady" alt="pictureofloglady">
+                <img class="img-responsive hide" src="assets/images/shelly.jpg" id="shelly" alt="pictureofshelly">
+                <iframe src="assets/falling.mp3" allow="autoplay" id="audio" class="hide"></iframe>
                
 
             </div>
 
-
-            <audio controls autoplay>
-                    <source src="assets/falling.mp3" type="audio/ogg">
-                    </audio>
-
+            <iframe src="assets/falling.mp3" allow="autoplay" id="audio" class="hide"></iframe>
+            
         </div>
 
 
@@ -83,3 +96,5 @@
 </body>
 
 </html>
+
+<!-- tests -->
